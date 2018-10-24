@@ -31,7 +31,10 @@ $colors: (
   dark:       #222
 );
 
-
+$refresher-border-color:transparent;
+$refresher-icon-color:white;
+$refresher-height:10px;
+// $refresher-icon-font-size:90px;
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here

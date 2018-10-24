@@ -5,21 +5,17 @@ import { Nav, Platform } from 'ionic-angular';
 
 
 @Component({
-  templateUrl: 'app.html'
+   template: `<ion-nav [root]="rootPage"></ion-nav>`
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = 'Page1';
+  rootPage: any = 'ClimaPage';
 
-  pages: Array<{ title: string, component: any }>;
+
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
-    // used for an example of ngFor and navigation
-    this.pages = [
-      { title: 'Page One', component: 'Page1' },
-      { title: 'Page Two', component: 'Page2' }
-    ];
+
 
   }
 
@@ -29,6 +25,9 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+       // setTimeout(()=>{
+       //    this.splashScreen.hide();
+       //  },100);
     });
   }
 

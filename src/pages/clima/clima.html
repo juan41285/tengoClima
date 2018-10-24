@@ -1,0 +1,54 @@
+<!--
+  Generated template for the ClimaPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+<ion-content  class="bg-clima">
+  <ion-grid>
+   <ion-row>
+    <ion-col col-12>
+      <ion-icon name="refresh"  (click)="enableLocation()" class="icon-refresh hide-land"></ion-icon>
+      <ion-refresher (ionRefresh)="doRefresh($event)" >
+      <ion-refresher-content
+      class="icon-refresh"
+        pullingIcon="refresh"
+        refreshingSpinner="crescent">
+      </ion-refresher-content>
+    </ion-refresher>
+    </ion-col>
+    <ion-col col-12 col-sm-6>
+      <div class="timezone">
+        <icon-clima [icono]="data?.currently.icon"></icon-clima> <span>{{data?.timezone || 'obteniendo ubicación'}}</span>
+      </div>
+
+      <h1 class="temperature">
+        {{(data?.currently.temperature | number:'1.0-0') || '00'}}° <br>
+      </h1>
+<small class="summary hide-port">{{data?.currently.summary}}</small>
+    </ion-col>
+    <ion-col col-12 col-sm-6>
+    <ion-row>
+    <ion-col col-6 col-sm-12>
+      <h3 class="humedad">HUMEDAD <br> <span>{{(data?.currently.humidity * 100) | number:'1.0-0'}}%</span></h3>
+    </ion-col>
+    <ion-col col-6 col-sm-12>
+      <h3 class="lluvias">PROB. DE LLUVIAS <br> <span>{{(data?.currently.precipProbability * 100) | number:'1.0-0' }}%</span></h3>
+    </ion-col>
+
+    <ion-col col-12 col-sm-12>
+      <h3 class="summary hide-land">{{data?.currently.summary}}</h3>
+    </ion-col>
+<ion-col col-12>
+      <ion-icon name="refresh"  (click)="enableLocation()" class="icon-refresh hide-port"></ion-icon>
+    </ion-col>
+
+
+  </ion-row>
+  </ion-col>
+  </ion-row>
+
+</ion-grid>
+</ion-content>

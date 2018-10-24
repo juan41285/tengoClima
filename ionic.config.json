@@ -1,6 +1,13 @@
 {
-  "name": "ionic-unit-testing-example",
-  "app_id": "",
+  "name": "ionic-clima-tengofree",
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular",
-  "integrations": {}
+  "proxies": [
+    {
+      "path":"/2fa7b5e3579980e70eb137da56e48af9",
+      "proxyUrl": " https://api.darksky.net/forecast/2fa7b5e3579980e70eb137da56e48af9"
+    }
+  ]
 }
